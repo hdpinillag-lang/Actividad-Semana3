@@ -1,0 +1,133 @@
+/* ==========================================
+   Estilos Generales de la Página
+   ========================================== */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+main {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #333;
+    color: white;
+    margin-top: 30px;
+}
+
+/* ==========================================
+   REQUISITO: Enlace Saltar al contenido (position y :focus)
+   ========================================== */
+.skip-link {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    background-color: #ff5722;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.skip-link:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    display: inline-block;
+}
+
+/* ==========================================
+   REQUISITO: Estilo Atractivo de Navegación (+3 propiedades) y Flexbox
+   ========================================== */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    display: flex; /* REQUISITO: Flexbox aplicado a un elemento padre */
+    list-style-type: none;
+    padding: 0;
+    justify-content: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;       /* Propiedad 1: Padding */
+    background-color: #34495e; /* Propiedad 2: Background */
+    border-radius: 5px;       /* Propiedad 3: Border-radius */
+    margin: 0 5px;
+    transition: all 0.3s ease;
+}
+
+nav a.active {
+    background-color: #1abc9c;
+}
+
+/* REQUISITO: Pseudo-clase :hover con comportamiento interesante */
+nav a:hover {
+    background-color: #ff5722;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* ==========================================
+   REQUISITO: Modelo de Caja aplicado a Imágenes (border, padding, border-radius)
+   ========================================== */
+img {
+    max-width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    border: 5px solid #ffffff;     /* Requisito: Border */
+    padding: 10px;                 /* Requisito: Padding */
+    border-radius: 10px;           /* Requisito: Border-radius */
+    background-color: #e0e0e0;
+}
+
+/* ==========================================
+   REQUISITO: Propiedad CSS Grid en elemento padre
+   ========================================== */
+.grid-container {
+    display: grid; /* Requisito: Grid */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Múltiples columnas */
+    gap: 20px;
+    justify-content: center;
+}
+
+/* ==========================================
+   REQUISITO: Implementación del selector avanzado nth-child
+   Aplica variaciones de diseño intercaladas en las esquinas de la galería
+   ========================================== */
+.grid-container img:nth-child(odd) {
+    border-color: #1abc9c;
+    border-radius: 40px 10px 40px 10px;
+}
+
+.grid-container img:nth-child(even) {
+    border-color: #3498db;
+    border-radius: 10px 40px 10px 40px;
+}
+
+/* ==========================================
+   REQUISITO: Flexbox aplicado a la galería de gatos
+   ========================================== */
+.flex-container {
+    display: flex; /* Requisito: Flexbox */
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 15px;
+}
